@@ -405,3 +405,35 @@ else:
 
 abc = round(((a + b + c) / 2), 1)
 print('Средняя оценка за лекции всех лекторов в рамках курса Python:', abc)
+
+
+student_list = [student_1, student_2, student_3]
+lecturer_list = [best_lecturer_1, best_lecturer_2, best_lecturer_3]
+
+def student_rating(student_list, course_name):
+  count_all = []
+  for stud in student_list:
+    if stud.courses_in_progress == [course_name]:
+      count_all.extend(stud)
+  return sum(student_list.srgr()) / len(count_all)
+
+
+def lecturer_rating(lecturer_list, course_name):
+  sum_all = 0
+  count_all = []
+  for lect in lecturer_list:
+    if lect.courses_attached == [course_name]:
+      sum_all += len(lecturer_list[lect])
+      count_all.extend(lect)
+  return sum(count_all) / max(len(count_all))
+
+# не знаю, как добиться работоспособности данного кода!
+
+print(
+  f"Средняя оценка для всех студентов по курсу {'Python'}: {student_rating(student_list, 'Python')}"
+)
+print()
+
+print(
+  f"Средняя оценка для всех лекторов по курсу {'Python'}: {lecturer_rating(lecturer_list, 'Python')}"
+)
